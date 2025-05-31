@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shading Tools - SketchSmart Tools</title>
+  
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefcfb;
+      color: #333;
+    }
+
+    nav.navbar {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff7e5f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #ff7e5f;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background:linear-gradient(to right, #d3d3d3, #a9a9a9, #6e6e6e);
+      
+    }
+
+    header h1 {
+       font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #333333;
+
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #333333;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown .arrow {
+      font-size: 0.7rem;
+      margin-left: 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      min-width: 240px;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    section.products-section {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .products-section h2 {
+      font-size: 2rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      color: #333333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.5rem;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      padding: 0 1rem 1rem;
+    }
+
+    .product-card a {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .product-card a:hover {
+      background: linear-gradient(to right, #ff956e, #ffc085);
+    }
+
+    footer {
+  background-color: #fff;
+  color: #666; /* light gray text */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* subtle light border */
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #b36b00; /* soft brown/golden */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🎨 Artisentials</div>
+    <ul class="nav-links">
+      <li><a href="prac2.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="canvas.html" class="active" style="color:darkslategrey;">Canvas Essentials</a>
+        <ul class="dropdown-menu">
+          <li><a href="canvasbudget.html">Good-Quality & Budget-Friendly Products</a></li>
+          <li><a href="canvas.html">Best Quality & Trusted Products</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="shading.html" class="active" style="color:#ff7e5f;">Shading Tools <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="shadingbudget.html">Good-Quality & Budget-Friendly Products</a></li>
+          <li><a href="shading.html">Best Quality & Trusted Products</a></li>
+        </ul>
+      </li>
+
+      <li><a href="tips.html">Tips</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Shading Tools</h1>
+    <p>Recommended Tools for Beautiful Shading & Blending</p>
+  </header>
+
+  <section class="products-section">
+    <h2>✏️Shading Tools</h2>
+    <div class="product-grid">
+      <!-- Product cards go here (you already have them) -->
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81xAWOE5SWL._SL1500_.jpg" alt="Staedtler Mars Lumograph">
+      <h3>Staedtler Mars Lumograph</h3>
+      <p>Staedtler Mars Lumograph 100G6 pencil set includes 6 premium-quality graphite pencils (8B–HB), ideal for writing, sketching, and drafting. Break-resistant, easy to erase/sharpen, perfect for artists and graphic designers.</p>
+      <a href="https://amzn.to/43Mt84U" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61QKVMwXftL._SL1333_.jpg" alt="General's Charcoal White Pencils">
+      <h3>General's Charcoal White Pencils</h3>
+      <p>General's Charcoal White Pencils offer smooth, blendable white charcoal ideal for highlights in charcoal or graphite art. Handcrafted from cedar, AP/ACMI approved, non-toxic, eco-conscious, and lead-free.</p>
+      <a href="https://amzn.to/3SjTQve" target="_blank">Buy on Amazon</a>
+    </div>
+
+   
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51slVijRDjL._SL1000_.jpg" alt="Tombow Mono Zero Eraser ">
+      <h3>Tombow Mono Zero Eraser </h3>
+      <p>Tombow Mono Zero Eraser Value Pack includes 2.3mm round tip eraser and refill. Features ultra-fine precision, pen-style body, push-button advance, and clip—ideal for detailed, clean pencil mark removal.</p>
+      <a href="https://amzn.to/3HoB4QZ" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81a+-MM9GqL._SX679_.jpg" alt="Canson XL Series Bristol Pad, Heavyweight Paper">
+      <h3>Canson XL Series Bristol Pad, Heavyweight Paper</h3>
+      <p>Canson XL Bristol Pad has 25 heavyweight, bright white 11x14-inch sheets. Smooth, acid-free 100lb paper ideal for pen, ink, marker, pencil, and colored pencil with excellent erasability and scanning quality.</p>
+      <a href="https://amzn.to/44OgEe5" target="_blank">Buy on Amazon</a>
+    </div>
+    
+   
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/512M+qwUR0L._SL1080_.jpg" alt="General Pencil 6B Soft Charcoal Pencils">
+      <h3>General Pencil 6B Soft Charcoal Pencils</h3>
+      <p>General Pencil 6B Soft Charcoal Pencils, pack of 2, feature high-quality willow charcoal for smooth, soft drawing and sketching. Round barrel, pre-sharpened, ideal for artists and illustrators.</p>
+      <a href="https://amzn.to/3Z1upSX" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51oUX74NVfL._SL1080_.jpg" alt="General Pencil 4B Soft Charcoal Pencils">
+      <h3>General Pencil 4B Soft Charcoal Pencils</h3>
+      <p>General Pencil 4B Soft Charcoal Pencils, pack of 2, feature high-quality willow charcoal for smooth, soft drawing and sketching. Round barrel, pre-sharpened, ideal for artists and illustrators.</p>
+      <a href="https://amzn.to/4mwK6vn" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51bIv0TmZ4L._SL1080_.jpg" alt="General Pencil 2B Medium Charcoal Pencils">
+      <h3>General Pencil 2B Medium Charcoal Pencils</h3>
+      <p>General Pencil 2B Medium Charcoal Pencils, made from high-quality willow charcoal for smooth drawing and sketching. Round barrel, pre-sharpened, ideal for teens and adults, illustrators, and graphic artists. Superior artist grade quality.</p>
+      <a href="https://amzn.to/4my5YGU" target="_blank">Buy on Amazon</a>
+    </div>
+
+    
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71b3ZuCtPqL._SL1500_.jpg" alt="Slice 10515 Mini Box Cutter ">
+      <h3>Slice 10515 Mini Box Cutter </h3>
+      <p>Slice 10515 Mini Box Cutter features a ceramic rounded-tip blade, integrated magnet, ambidextrous design, and finger-friendly safety edge. Manual retractable, non-sparking, non-conductive, rust-resistant blade lasts 11x longer than metal blades.</p>
+      <a href="https://amzn.to/4kFoADb" target="_blank">Buy on Amazon</a>
+    </div>
+    
+    
+  
+    </div>
+  </section>
+
+ <footer class="bg-white mt-16 border-t">
+  <div class="max-w-6xl mx-auto py-8 px-6 text-center text-sm text-gray-600 space-y-3">
+    <p>© 2025 Artisentials Tools. All rights reserved.</p>
+    <p>
+      Need help or have a question? Contact me on Instagram 
+      <a href="https://www.instagram.com/_vaidehi.art_?igsh=MXJxM3p3OGU4bHYxbg==" 
+         class="text-amber-600 font-medium hover:underline" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Instagram - Vaidehi Art">@_vaidehi.art_</a>
+    </p>
+   
+  </div>
+</footer>
+
+</body>
+</html>

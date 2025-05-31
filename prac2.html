@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Artisentials Tools</title>
+  <meta name="description" content="Top recommended sketching tools for artists – graphite pencils, sketchbooks, blending tools and more. Curated tips included.">
+  
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefcfb;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff5c5c, #ff9966);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Navbar */
+
+    @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-links {
+      display: none; /* or toggle this with a hamburger */
+    }
+  }
+
+    nav.navbar {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff7e5f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #ff7e5f;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .dropdown {
+  position: relative;
+}
+
+.dropdown .arrow {
+  font-size: 0.7rem;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 220px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+    /* Hamburger - hidden on desktop */
+    .hamburger {
+  display: none;
+  
+}
+
+.hamburger.open i {
+  transform: rotate(90deg);
+}
+
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hamburger {
+        display: block;
+        
+      }
+
+      .nav-links {
+        display:none;
+        flex-direction: column;
+        gap:1rem;
+        position: absolute;
+        top:70px;
+        left: 0;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+         background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 0 0 12px 12px;
+        padding: 1.2rem 1.5rem;
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li a {
+        font-size: 1.1rem;
+        padding: 0.75rem;
+        display: block;
+        width: 100%;
+        background-color: #f8f8f8;
+         background: #f7f7f7;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+      }
+
+      .nav-links li a:hover {
+        background-color: #eee;
+      }
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .product-card {
+
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      object-fit: cover;
+      width: 100%;
+      height: auto;      /* change this */
+      max-width: 100%; /* optional max height */
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.5rem;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      padding: 0 1rem 1rem;
+    }
+
+    .buy-btn, .product-card a {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover, .product-card a:hover {
+      background: linear-gradient(to right, #ff956e, #ffc085);
+    }
+
+    .tips-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff8e1;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    .tips-section h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .tips-section ul {
+      list-style: disc inside;
+      padding-left: 1rem;
+      color: #555;
+    }
+
+    .tips-section li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+   footer {
+  background-color: #fff;
+  color: #666; /* light gray text */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.05); /* subtle light border */
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #b36b00; /* soft brown/golden */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+   
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<main class="flex-grow">
+  
+
+
+
+ <nav class="navbar">
+    
+    <div class="logo"><a href="prac2.html" style="text-decoration:none; color:inherit;">🎨 Artisentials</a>
+    <div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div></div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; color: #555; font-size: 0.9rem;">
+
+    
+    <ul class="nav-links" id="navLinks">
+
+      <li><a href="prac2.html" style="color:#ff7e5f;">Home</a></li>
+      <li class="dropdown">
+  <a href="canvas.html" class="active" style="color:#333;">
+    Canvas Essentials 
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="canvasbudget.html">Good-Quality & Budget-Friendly products</a></li>
+    <li><a href="canvas.html">Best Quality & Trusted products</a></li>
+    
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="shading.html" class="active" style="color:darkslategray;">
+    Shading Tools</a>
+  <ul class="dropdown-menu">
+    <li><a href="shadingbudget.html">Good-Quality & Budget-Friendly products</a></li>
+    <li><a href="shading.html">Best Quality & Trusted products</a></li>
+    
+  </ul>
+</li>
+
+      <li><a href="tips.html">Tips</a></li>
+      
+
+    </ul>
+    
+  </div>
+  </nav>
+
+  <header id="top">
+    <h1>Artisentials Tools</h1>
+    <p>Curated drawing tools and creative essentials for every inspired artist.</p>
+  </header>
+
+  
+    <section class="product-grid" id="products">
+      <!-- Product Cards ( <div class="product-card">same as your content) -->
+      <!-- You can leave this section unchanged -->
+        <div class="product-card">
+  <img src="https://m.media-amazon.com/images/I/91jeXQ8QMzL._SL1500_.jpg" alt="Faber-Castell Polychromos Color Pencils Set">
+  <h3>Faber-Castell Polychromos Color Pencils Set</h3>
+  <p>Faber-Castell Polychromos 120-color pencil set features vibrant, lightfast pigments in wooden barrels, ideal for professionals. Perfect for detailed artwork, graphics, and freestyle drawing. Weighs 340 grams.</p>
+  <a href="https://amzn.to/4dxxFvd" target="_blank">Buy on Amazon</a>
+</div>
+
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/91tpqCraJyL._SL1500_.jpg" alt="Strathmore Drawing Paper">
+        <h3>Strathmore 400 Series Drawing Paper</h3>
+        <p>Strathmore 400 Series 9"x12" drawing pad includes 24 cream-colored sheets with a medium surface, ideal for sketching and finished work. Made in the USA, wire-bound, weighs 340g.</p>
+        <a href="https://amzn.to/43i0ozv" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/91XnI-jMOOL._SL1500_.jpg" alt="Derwent Lightfast Colour Pencils">
+        <h3>Derwent Lightfast Colour Pencils</h3>
+        <p>Derwent Lightfast 100-color pencil set features 4mm oil-based cores with creamy texture, 100% lightfast for up to 100 years, ideal for layering, blending, fine art, and professional use.</p>
+        <a href="https://amzn.to/43LhgQD" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71mUxeV-LkS._SL1200_.jpg" alt="Holbein W452 Transparent Watercolor Paint">
+        <h3>Holbein W452 Transparent Watercolor Paint</h3><p>This set includes 12 pastel colors (5ml each) with high transparency, sharp tones, excellent lightfastness, and smooth bleeding. Ideal for various techniques. Made in Japan.</p>
+        <a href="https://amzn.to/4dtQiAa" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/61QIr4KFKhL.jpg" alt="Brustro Artist's Black Sketchbook">
+        <h3>Brustro Artist's Black Sketchbook</h3>
+        <p>A4 Size | 200 GSM | 80 Pages. Perfect for coloured pencils, gel pens, chalk, pastels, metallic shades, and more.Spiral-bound with a sturdy cover, perfect for vibrant, long-lasting artwork.</p>
+        <a href="https://amzn.to/3H4onuE" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/618YVe7E7jL._SL1500_.jpg" alt="Winsor & Newton Professional Fixative Spray">
+        <h3>Winsor & Newton Professional Fixative Spray</h3>
+        <p>Winsor & Newton Fixative Spray (400ml) offers fast-drying, non-yellowing, colorless protection for charcoal, pencil, pastel, and chalk artwork. Alcohol-based, matte finish, smudge-resistant, and made in France.</p>
+        <a href="https://amzn.to/45pPcU9" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/713DYA4BAKL._SL1500_.jpg" alt="OXYGLOBE Portable 8-Grid Mini Palette">
+        <h3>OXYGLOBE Portable 8-Grid Mini Palette</h3>
+        <p>OXYGLOBE’s transparent mini palette offers 8 compartments to mix colors effortlessly. Lightweight and travel-friendly, it’s crafted for artists everywhere to create anytime, anywhere with ease and vibrant flexibility.</p>
+        <a href="https://amzn.to/44SnC1N" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71kf+ffNyAL._SL1456_.jpg" alt="Hahnemuhle Nostalgie Sketch Book">
+        <h3>Hahnemuhle Nostalgie Sketch Book</h3>
+        <p>Hahnemuhle Nostalgie A6 sketchbook features 190gsm watercolor paper with smooth, durable linen cover. Contains 40 sheets (80 pages), sewn binding, acid-free, ideal for dry and wet techniques, elegant and versatile.</p>
+        <a href="https://amzn.to/3FwBYKK" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51l0MEl7rjL._SL1000_.jpg" alt="Derwent Super Point Mini Manual Helical Desktop Sharpener">
+        <h3>Derwent Super Point Mini Manual Helical Desktop Sharpener</h3>
+        <p>Get precision with the Derwent Super Point Mini Sharpener—its helical blade delivers crisp tips, fits 8mm pencils, includes a clamp, easy-clean tray.</p>
+        <a href="https://amzn.to/43ci1SD" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81L68wxdSLL._SL1500_.jpg" alt="Brustro Artists Sketch Book">
+        <h3>Brustro Artists Sketch Book</h3>
+        <p>Brustro A5 Landscape Sketchbook features 160 GSM smooth, acid-free white paper, ideal for pencil, ink, crayon, chalk, and light watercolor. Wiro bound with 116 pages, perforated sheets, and durable hard cover.</p>
+        <a href="https://amzn.to/3HcHova" target="_blank">Buy on Amazon</a>
+      </div>
+
+
+       <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61uxLL08KML._SL1500_.jpg" alt="PanPastel Soft Knives">
+      <h3>PanPastel Soft Knives</h3><p>PanPastel Soft Knives Set includes 4 artist-quality knives (round, flat, oval, point) and 8 reusable foam covers with micropore technology. Ideal for blending PanPastels, watercolors, clays, and ceramics.</p>
+      <a href="https://amzn.to/43pWHrz" target="_blank">Buy on Amazon</a>
+    </div>
+
+
+    </section>
+
+    <section class="tips-section" id="tips">
+      <h2>Basic Tips for Using Drawing Tools</h2>
+      <ul>
+        <li><strong>Start Light:</strong> Begin with lighter strokes. You can darken later.</li>
+        <li><strong>Choose the Right Paper:</strong> Use 160 GSM or above to prevent smudging and tearing.</li>
+        <li><strong>Keep Tools Sharp:</strong> A fine point improves detail and control.</li>
+        <li><strong>Use a Blending Stump:</strong> For smooth shading, use blending stumps or tissues.</li>
+        <li><strong>Fix Your Work:</strong> Spray fixative to avoid smudging finished charcoal drawings.</li>
+      </ul>
+    </section>
+
+   
+  <!-- JavaScript for hamburger menu toggle -->
+  
+
+  <script>
+  function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.querySelector('.hamburger');
+  navLinks.classList.toggle('show');
+  hamburger.classList.toggle('open');
+}
+
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('show');
+    document.querySelector('.hamburger').classList.remove('open');
+  });
+});
+
+</script>
+
+
+
+
+
+
+</main>
+
+
+ <footer class="bg-white mt-16 border-t">
+  <div class="max-w-6xl mx-auto py-8 px-6 text-center text-sm text-gray-600 space-y-3">
+    <p>© 2025 Artisentials Tools. All rights reserved.</p>
+    <p>
+      Need help or have a question? Contact me on Instagram 
+      <a href="https://www.instagram.com/_vaidehi.art_?igsh=MXJxM3p3OGU4bHYxbg==" 
+         class="text-amber-600 font-medium hover:underline" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Instagram - Vaidehi Art">@_vaidehi.art_</a>
+    </p>
+    
+  </div>
+</footer>
+ 
+
+
+ <script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Canvas Essentials - SketchSmart Tools</title>
+  
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+
+body {
+  overflow-x: hidden;
+}
+
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fefcfb;
+      color: #333;
+    }
+
+    nav.navbar {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff7e5f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #ff7e5f;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+       background: linear-gradient(90deg, #ff5c5c, #ff9966);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .dropdown {
+  position: relative;
+}
+
+.dropdown .arrow {
+  font-size: 0.7rem;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 220px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.5rem;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      padding: 0 1rem 1rem;
+    }
+
+    .product-card a {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .product-card a:hover {
+      background: linear-gradient(to right, #ff956e, #ffc085);
+    }
+
+   footer {
+  background-color: #fff;
+  color: #666; /* light gray text */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* subtle light border */
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #b36b00; /* soft brown/golden */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🎨 Artisentials</div>
+    <ul class="nav-links">
+      <li><a href="prac2.html">Home</a></li>
+
+      <li class="dropdown">
+  <a href="canvas.html" class="active">
+    Canvas Essentials <span class="arrow">▼</span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="canvasbudget.html">Good-Quality & Budget-Friendly products</a></li>
+    <li><a href="canvas.html">Best Quality & Trusted products</a></li>
+    
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="shading.html" class="active" style="color:darkslategray;">
+    Shading Tools</a>
+  <ul class="dropdown-menu">
+    <li><a href="shadingbudget.html">Good-Quality & Budget-Friendly products</a></li>
+    <li><a href="shading.html">Best Quality & Trusted products</a></li>
+    
+  </ul>
+</li>
+
+
+      <li><a href="tips.html">Tips</a></li>
+      
+
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Canvas Essentials</h1>
+    <p>Recommended tools and supplies for creating beautiful canvas art</p>
+  </header>
+
+  <main class="products-section">
+    <h1>🎨 Canvas Essentials</h1>
+    <div class="product-grid">
+
+      <!-- Canvas Surfaces -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71U4jyDBkdL._SL1500_.jpg" alt="Scholar Art® Deep Edge Canvas ">
+        <h3>Scholar Art® Deep Edge Canvas </h3>
+        <p> Scholar Art® Deep Edge Canvas features 10 Oz primed cotton, a 35x40mm kiln-dried frame, and medium-grain texture—ideal for oil, acrylic, metallic, and alkyd paints with smooth application.
+
+</p>
+        <a href="https://amzn.to/4jhkxfa" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81lI9FcUDRL._SL1500_.jpg" alt="ARTIFY Paint Brush Set">
+        <h3>ARTIFY Paint Brush Set</h3><p>ARTIFY 24-piece brush set includes premium Korean nylon bristles, secure ferrules, and varied shapes. Comes with a waterproof cloth roll and palette knife—ideal for acrylic, oil, watercolor, and gouache.</p>
+        <a href="https://amzn.to/3H6yQFZ" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <!-- Brushes -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/717MNrevorL._SL1500_.jpg" alt="Liquitex BASICS Acrylic Paint Set">
+        <h3>Liquitex BASICS Acrylic Paint Set</h3>
+        <p>Liquitex BASICS Acrylic Paint Set includes 12 vibrant 22ml tubes with a smooth gloss finish, offering student-quality acrylics made for all artists with reliable performance and rich, blendable colors.</p>
+        <a href="https://amzn.to/4mxwnET" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81HsaZsQPQL._SL1500_.jpg" alt="Winsor & Newton Oil Colour Sets">
+        <h3>Winsor & Newton Oil Colour Sets</h3>
+        <p>Winsor & Newton Winton Oil Colour Set includes 20 vibrant 12ml tubes with excellent pigment strength, lightfastness, and brush retention. Offers consistent texture, varied opacity, and traditional oil painting performance.</p>
+        <a href="https://amzn.to/4mrlxQq" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <!-- Acrylics -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/91QsIRppUjL._SL1500_.jpg" alt="BRUSTRO Artists Palette Painting Knives">
+        <h3>BRUSTRO Artists Painting Knives</h3>
+        <p>BRUSTRO Artists Palette Knives Set includes 5 stainless steel blades with ergonomic wooden handles, ideal for mixing, spreading, scumbling, and applying thick paints, gesso, modeling paste, and texture gels.</p>
+        <a href="https://amzn.to/4mF4jiW" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81MTosg6GLL._SL1500_.jpg" alt="
+Princeton Heritage Short Handle Round Paint Brush">
+        <h3>Princeton Heritage Short Handle Round Paint Brush</h3>
+        <p>Princeton Heritage Short Handle Round Brush, Size 16, features synthetic bristles with excellent color holding and smooth flow. Ideal for fine detail and broad washes in watercolor, acrylic, and gouache painting.</p>
+        <a href="https://amzn.to/3HbQs3c" target="_blank">Buy on Amazon</a>
+      </div>
+
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/811F066nyWL._SL1500_.jpg" alt="
+Princeton Velvetouch Short Handle Round Paintbrush ">
+        <h3>Princeton Velvetouch Short Handle Round Paintbrush</h3>
+        <p>Princeton Velvetouch Round Brush, Size 2, features synthetic blend bristles with excellent spring and snap. Comfortable handle ensures smooth application, ideal for fine detail in acrylic, watercolor, gouache, and oil painting.</p>
+        <a href="https://amzn.to/44U0pMK" target="_blank">Buy on Amazon</a>
+      </div>
+
+
+      <!-- Extras -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/81OKovTVf8L._SL1500_.jpg" alt="BOSOBO Paint Brushes">
+        <h3>BOSOBO Paint Brushes</h3>
+        <p>BOSOBO Paint Brushes Set includes 2 packs of 10 nylon round-pointed brushes, with rust-proof ferrules and wooden handles. Ideal for acrylic, oil, watercolor, face, nail art, and fine detailing.</p>
+        <a href="https://amzn.to/44S5tBa" target="_blank">Buy on Amazon</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61lW2Gj2SHL._SL1500_.jpg" alt="Titanium White, Liquitex BASICS Acrylic Paint">
+        <h3>Titanium White, Liquitex BASICS Acrylic Paint</h3>
+        <p>Liquitex BASICS Acrylic Paint Titanium White comes in an 8.45 oz tube (38.61 fl oz total volume). Suitable for wood, plastic, metal, and stone surfaces, offering quality acrylic paint performance.</p>
+        <a href="https://amzn.to/4muidEk" target="_blank">Buy on Amazon</a>
+      </div>
+     
+    </div>
+  </main>
+
+  <footer class="bg-white mt-16 border-t">
+  <div class="max-w-6xl mx-auto py-8 px-6 text-center text-sm text-gray-600 space-y-3">
+    <p>© 2025 Artisentials Tools. All rights reserved.</p>
+    <p>
+      Need help or have a question? Contact me on Instagram 
+      <a href="https://www.instagram.com/_vaidehi.art_?igsh=MXJxM3p3OGU4bHYxbg==" 
+         class="text-amber-600 font-medium hover:underline" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Instagram - Vaidehi Art">@_vaidehi.art_</a>
+    </p>
+    
+  </div>
+</footer>
+</body>
+</html>

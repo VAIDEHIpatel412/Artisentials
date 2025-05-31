@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget-Friendly Shading Tools - SketchSmart Tools</title>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+     html {
+      scroll-behavior: smooth;
+    }
+
+body {
+  overflow-x: hidden;
+}
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffdfb;
+      color: #333;
+    }
+
+    nav.navbar {
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff7e5f;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #ff7e5f;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, #d3d3d3, #a9a9a9, #6e6e6e);
+      
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #333333;
+
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #333333;
+
+    }
+
+    .dropdown {
+  position: relative;
+}
+
+.dropdown .arrow {
+  font-size: 0.7rem;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  min-width: 220px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin: 0.8rem 0 0.5rem;
+      color: #333;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #555;
+      padding: 0 1rem 1rem;
+    }
+
+    .product-card a {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .product-card a:hover {
+      background: linear-gradient(to right, #ff956e, #ffc085);
+    }
+
+   footer {
+  background-color: #fff;
+  color: #666; /* light gray text */
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 30px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); /* subtle light border */
+}
+
+footer p {
+  margin: 8px 0;
+}
+
+footer a {
+  color: #b36b00; /* soft brown/golden */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">🎨 Artisentials</div>
+    <ul class="nav-links">
+      <li><a href="prac2.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="canvas.html">Canvas Essentials</a>
+        <ul class="dropdown-menu">
+          <li><a href="canvasbudget.html">Good-Quality & Budget-Friendly products</a></li>
+          <li><a href="canvas.html">Best Quality & Trusted products</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="shading.html" class="active" style="color:#ff7e5f;">Shading Tools <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="shadingbudget.html" class="active">Good-Quality & Budget-Friendly products</a></li>
+          <li><a href="shading.html">Best Quality & Trusted products</a></li>
+        </ul>
+      </li>
+
+      <li><a href="tips.html">Tips</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1> Budget-Friendly Shading Tools</h1>
+    <p>Top-quality shading tools at affordable prices for every aspiring artist</p>
+  </header>
+
+  <main class="product-grid">
+    <!-- Sample Product 1 -->
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61iZE37TQaL._SL1080_.jpg" alt="BFaber-Castell Castell 9000 Pencil Set">
+      <h3>Faber-Castell Castell 9000 Pencil Set</h3>
+      <p>Faber-Castell Castell 9000 Pencil Set includes 6 premium graphite pencils (HB–8B) with break-resistant SV-bonded leads, ideal for artists, students, and designers. Smooth, high-quality pencils ensure precise, non-scratchy drawing.</p>
+      <a href="https://amzn.to/3YYDnQV" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <!-- Sample Product 2 -->
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61IxMIwotJL._SL1080_.jpg" alt="Nitram Academie Fusains Fine Art Charcoal ">
+      <h3>Nitram Academie Fusains Fine Art Charcoal </h3>
+      <p>Nitram Academie Fusains Fine Art Charcoal (HB, Box of 5) offers medium soft sticks ideal for drawing and sketching, perfect for homogenizing tones while retaining rich tonal details with precision.</p>
+      <a href="https://amzn.to/4jCwD2N" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61V9Ory6N8L._SL1000_.jpg" alt="Derwent Tinted Charcoal Drawing Pencils ">
+      <h3>Derwent Tinted Charcoal Drawing Pencils </h3>
+      <p>Derwent Tinted Charcoal Pencils (Set of 24) combine rich charcoal with subtle color, ideal for smudging, blending, and adding soft accents to drawings. Perfect for artists seeking expressive, textured effects.</p>
+      <a href="https://amzn.to/3Z3fFmx" target="_blank">Buy on Amazon</a>
+    </div>
+
+     <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51KtUlsQWML._SL1500_.jpg" alt="OFIXO Blending Smudge Tortillon Paper Stump">
+      <h3>OFIXO Blending Smudge Tortillon Paper Stump</h3>
+      <p>OFIXO 6pcs Blending Stump Set includes 6 sizes of paper stumps for shading, smudging, and blending. Ideal for sketching with pencils or pastels. Reusable, sharpenable, and easy to use.</p>
+      <a href="https://amzn.to/45rMD3T" target="_blank">Buy on Amazon</a>
+    </div>
+
+     <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61r-VM7vgrL._SL1325_.jpg" alt="Faber-Castell Kneadable Eraser">
+      <h3>Faber-Castell Kneadable Eraser</h3>
+      <p>Faber-Castell Kneadable Erasers (Pack of 3) are perfect for correcting charcoal and pencil work. Easily moldable, reusable, and mess-free, they come in a handy plastic storage box.</p>
+      <a href="https://amzn.to/4jlmI18" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61Nris9G6iL._SL1000_.jpg" alt="Derwent Tinted Charcoal Pencils">
+      <h3>Derwent Tinted Charcoal Pencils</h3>
+      <p>Derwent Tinted Charcoal Pencils (Set of 6) combine rich charcoal with subtle color. Ideal for blending, smudging, and adding accents. Professional quality, water-soluble, with easy-grip barrels for smooth application.</p>
+      <a href="https://amzn.to/4dJrfcR" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61PHU5BoT4L._SL1000_.jpg"  alt="Derwent Battery Operated Eraser ">
+      <h3>Derwent Battery Operated Eraser </h3>
+      <p>Derwent Battery Operated Eraser offers precision erasing for graphite, colored, and pastel pencils. Includes 8 refills, features an ergonomic design, gentle vibration, and is ideal for detail work. Batteries not included.</p>
+      <a href="https://amzn.to/4jmYljI" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/51PMdy7k4AL.jpg" alt="Camel Compressed Charcoal Sticks">
+      <h3>Camel Compressed Charcoal Sticks</h3>
+      <p>Camel Compressed Charcoal Stick offers smooth, rich black strokes for artists. Made from synthetic charcoal, it's ideal for sketching on paper or canvas. Individually wrapped, 90mm long, 12mm thick, 160g.</p>
+      <a href="https://amzn.to/3ZANPOL" target="_blank">Buy on Amazon</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/71zVAJSZzOL._SL1500_.jpg"  alt="Camel Artists Fixative Spray">
+      <h3>Camel Artists Fixative Spray</h3>
+      <p>Camel Artists Fixative Spray (200ml) offers a matte finish and protects dry drawing materials. Packaged in a spray tin, it helps preserve artwork by preventing smudging and ensuring long-lasting durability.</p>
+      <a href="https://amzn.to/3H9gYKG" target="_blank">Buy on Amazon</a>
+    </div>
+
+
+    <!-- Add more budget shading tools similarly -->
+  </main>
+
+  <footer class="bg-white mt-16 border-t">
+  <div class="max-w-6xl mx-auto py-8 px-6 text-center text-sm text-gray-600 space-y-3">
+    <p>© 2025 Artisentials Tools. All rights reserved.</p>
+    <p>
+      Need help or have a question? Contact me on Instagram 
+      <a href="https://www.instagram.com/_vaidehi.art_?igsh=MXJxM3p3OGU4bHYxbg==" 
+         class="text-amber-600 font-medium hover:underline" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Instagram - Vaidehi Art">@_vaidehi.art_</a>
+    </p>
+    
+  </div>
+</footer>
+
+</body>
+</html>
