@@ -147,7 +147,9 @@
     /* Hamburger - hidden on desktop */
     .hamburger {
   display: none;
-  
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #444;
 }
 
 .hamburger.open i {
@@ -162,6 +164,10 @@
         align-items: flex-start;
       }
 
+      nav.navbar{
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
       .hamburger {
         display: block;
         
@@ -331,13 +337,15 @@ footer a:hover {
  <nav class="navbar">
     
     <div class="logo"><a href="prac2.html" style="text-decoration:none; color:inherit;">🎨 Artisentials</a>
-    <div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div></div>
+    </div>
+
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem; color: #555; font-size: 0.9rem;">
 
-    
+    <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+
     <ul class="nav-links" id="navLinks">
 
       <li><a href="prac2.html" style="color:#ff7e5f;">Home</a></li>
@@ -525,3 +533,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
 </body>
 </html>
+
+
+ 
+
+  
+     
+       
+       
+     
+
+   
+     
+    
+  
+
+
+
+   
+ 
